@@ -1,0 +1,40 @@
+﻿@model DetailsViewModel
+@{
+    ViewData["Title"] = "کالا"+Model.Product.Name;
+}
+<div>
+    <h1>@Model.Product.Name</h1>
+    <hr />
+    <img src="/images/@(Model.Product.Id).jpg" alt="Model.Product.Name"
+         class="img-thumbnail"/>
+
+    <p class="py-5 text-justify">@Model.Product.Description</p>
+    <p>قیمت: @Model.Product.Item.Price</p>
+    <dl>
+        @foreach (var item in Model.Categories)
+        {
+            <dt><a href="#">@item.Name</a></dt>
+                <dd>@item.Description</dd>
+        }
+    </dl>
+    <div>
+        <a class="btn btn-primary brn2" asp-controller="Home" asp-action="AddToCart"
+           asp-route-itemId="@Model.Product.ItemId">افزودن به سبد خرید</a>
+        @*@if (User.Identity.IsAuthenticated)
+        {
+            <a class="btn btn-primary brn2" asp-controller="Home" asp-action="AddToCart"
+               asp-route-itemId="@Model.Product.ItemId">افزودن به سبد خرید</a>
+        }
+        else
+        {
+            <a onclick="sayEror()" class="btn btn-primary" style="color:white">افزودن به سبد خرید</a>
+        }*@
+
+    </div>
+</div>
+<script>
+    //function sayEror() {
+    //    alert("vared site shavid");
+    //}
+</script>
+
