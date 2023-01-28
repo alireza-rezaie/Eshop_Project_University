@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lACAFEsrqoNQ6QCLqE9jqKyZHl15FjG3b+1acNlYI5suTNseaKCHO3YPclT9f96DtKZ4CT99gq6TpQAkQWRuBQ==",
+  "dgSpecHash": "ABCP62fU46Ky+8aDJDmY1yUsVETD8lWS6A/rs4/B27trjbgVETZf1jox1DNGa4nvQtizWB2KcmLVBfUxHDqPng==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alireza\\Desktop\\New folder\\MyEshop\\MyEshop\\MyEshop.csproj",
+  "projectFilePath": "C:\\Users\\alireza\\Desktop\\projectgit\\MyEshop\\MyEshop\\MyEshop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alireza\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\alireza\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

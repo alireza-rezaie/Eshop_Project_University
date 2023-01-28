@@ -135,8 +135,60 @@ namespace MyEshop.Controllers
                 .ToList();
             return View(products);
         }
-        
 
+        [Authorize]
+        public IActionResult Payment()
+        {
+            int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var order = _context.Order
+                .Include(o => o.OrderDetails)
+                .FirstOrDefault(o => o.UserId == userId && !o.IsFinaly);
+            if (order == null)
+            {
+
+                return NotFound();
+
+            }
+
+            var payment = new Payment((int)order.OrderDetails.Sum(d => d.Price * d.Count));
+
+            var res = payment.PaymentRequest($"پرداخت فاکتور شماره {order.OrderId}",
+                "http://localhost:38256/Home/OnlinePayment/" + order.OrderId, "alireza3356864@gmail.com", "09383356867");
+            if (res.Result.Status == 100)
+            {
+                return Redirect("https://sandbox.zarinpal.com/pg/StartPay/" + res.Result.Authority);
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+
+            return View();
+        }
+        public IActionResult OnlinePayment(int id)
+        {
+            if (HttpContext.Request.Query["Status"] != "" &&
+                HttpContext.Request.Query["Status"].ToString().ToLower() == "ok" &&
+                HttpContext.Request.Query["Authority"] != "")
+            {
+                string authority = HttpContext.Request.Query["Authority"].ToString();
+                var order = _context.Order.Include(o => o.OrderDetails)
+                    .FirstOrDefault(o => o.OrderId == id);
+                var payment = new Payment((int)order.OrderDetails.Sum(d => d.Price * d.Count));
+                var res = payment.Verification(authority).Result;
+                if (res.Status == 100)
+                {
+                    order.IsFinaly = true;
+                    _context.Order.Update(order);
+                    _context.SaveChanges();
+                    ViewBag.code = res.RefId;
+                    return View();
+                }
+            }
+
+            return View();
+        }
 
 
 

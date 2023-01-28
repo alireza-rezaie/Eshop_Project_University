@@ -10072,11 +10072,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alireza\\Desktop\\New folder\\MyEshop\\MyEshop\\MyEshop.csproj",
+      "projectUniqueName": "C:\\Users\\alireza\\Desktop\\projectgit\\MyEshop\\MyEshop\\MyEshop.csproj",
       "projectName": "MyEshop",
-      "projectPath": "C:\\Users\\alireza\\Desktop\\New folder\\MyEshop\\MyEshop\\MyEshop.csproj",
+      "projectPath": "C:\\Users\\alireza\\Desktop\\projectgit\\MyEshop\\MyEshop\\MyEshop.csproj",
       "packagesPath": "C:\\Users\\alireza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alireza\\Desktop\\New folder\\MyEshop\\MyEshop\\obj\\",
+      "outputPath": "C:\\Users\\alireza\\Desktop\\projectgit\\MyEshop\\MyEshop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
