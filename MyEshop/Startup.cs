@@ -84,8 +84,6 @@ namespace MyEshop
             }
             );
 
-
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

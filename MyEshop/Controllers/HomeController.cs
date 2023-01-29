@@ -162,8 +162,6 @@ namespace MyEshop.Controllers
             {
                 return BadRequest();
             }
-
-
             return View();
         }
         public IActionResult OnlinePayment(int id)
@@ -186,24 +184,17 @@ namespace MyEshop.Controllers
                     return View();
                 }
             }
-
             return View();
         }
-
-
-
         [Route("ContactUs")]
         public IActionResult ContactUs()
         {
             return View();
         }
-
-
         public IActionResult PriCvacy()
         {
             return View();
         }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
